@@ -1,0 +1,321 @@
+/* =========================
+   ESTILOS GENERALES
+========================= */
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+
+/* =========================
+   PORTADA
+========================= */
+
+h1 {
+    color: #c1121f;
+    font-size: 80px;
+    margin-top: 100px;
+}
+
+.portada {
+    padding: 40px;
+}
+
+.logo {
+    width: 130px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.frase {
+    font-size: 22px;
+}
+
+.linea {
+    width: 300px;
+    height: 2px;
+    background-color: #c1121f;
+    border: none;
+    margin: 30px auto;
+}
+
+
+/* =========================
+   PRESENTACIÓN DEL GRUPO
+========================= */
+
+.contenedor-presentacion {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+}
+
+.logo-presentacion {
+    width: 300px;
+}
+
+.presentacion {
+    margin-top: 140px;
+}
+
+.texto-presentacion {
+    max-width: 600px;
+}
+
+.titulo-presentacion {
+    color: #c1121f;
+    font-size: 45px;
+}
+
+
+/* =========================
+   ADMINISTRADORES
+========================= */
+
+.administradores {
+    margin-top: 140px;
+}
+
+.titulo-administradores {
+    text-align: center;
+    color: #c1121f;
+    font-size: 45px;
+}
+
+.contenedor-administradores {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.tarjeta-administrador {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.tarjeta-administrador img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 30%;
+    margin-top: 15px;
+}
+
+.tarjeta-administrador h3 {
+    border-bottom: 3px solid black;
+    color: black;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.tarjeta-administrador:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #c1121f;
+}
+
+
+/* =========================
+   GALERÍA RUTAS Y EVENTOS
+========================= */
+
+.titulo-galeria {
+    color: #c1121f;
+    font-size: 50px;
+}
+
+.contenedor-galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.contenedor-galeria img {
+    width: 300px;
+    height: 250px;
+    object-fit: cover;
+    transition: 0.3s;
+}
+
+.contenedor-galeria img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #c1121f;
+}
+
+
+/* =========================
+   CELULARES
+========================= */
+
+@media (max-width: 600px) {
+
+    /* PORTADA */
+
+    h1 {
+        font-size: 45px;
+    }
+
+    .logo {
+        width: 90px;
+        top: 20px;
+        left: 20px;
+    }
+
+    .portada {
+        padding: 20px;
+    }
+
+    .frase {
+        font-size: 18px;
+    }
+
+
+    /* PRESENTACIÓN */
+
+    .texto-presentacion {
+        max-width: 90%;
+        font-size: 16px;
+        margin: auto;
+    }
+
+    .titulo-presentacion,
+    .titulo-administradores,
+    .titulo-galeria {
+        font-size: 32px;
+    }
+
+    .logo-presentacion {
+        width: 200px;
+    }
+
+    .presentacion {
+        margin-top: 60px;
+    }
+
+
+    /* ADMINISTRADORES */
+
+    .administradores {
+        margin-top: 60px;
+    }
+
+    .contenedor-administradores {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tarjeta-administrador {
+        width: 80%;
+    }
+
+    .tarjeta-administrador img {
+        width: 180px;
+        height: 180px;
+    }
+
+
+    /* GALERÍA */
+
+    .contenedor-galeria img {
+        width: 90%;
+        height: 220px;
+    }
+
+}
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox {
+    background-color: black;
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+
+    transition: opacity 0.3s;
+}
+
+.lightbox.visible {
+    opacity: 1;
+}
+
+
+.lightbox img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+
+/* =========================
+   BOTÓN CERRAR
+========================= */
+
+.cerrar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    background-color: transparent;
+    border: none;
+    color: #c1121f;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar:hover {
+    color: white;
+}
+
+/* botones siguiente-anterior */
+
+.anterior,
+.siguiente {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    background-color: transparent;
+    border: none;
+
+    color: #c1121f;
+
+    font-size: 45px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.anterior {
+    left: 20px;
+}
+
+.siguiente {
+    right: 20px;
+}
+
+.anterior:hover,
+.siguiente:hover {
+    color: white;
+    transform: translateY(-50%) scale(1.2);
+
+    text-shadow: 0 0 15px #c1121f;
+}
